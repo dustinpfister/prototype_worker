@@ -15,47 +15,10 @@
 
     </body>
 
-	<script src="js/worker.js"></script>
+    <script src="js/stack_3_class.js"></script>
+    <script src="js/worker.js"></script>
+    <script src="js/area.js"></script>
     <script>
-
-// a high happyMulti is good becuase it means they effort comes more so from 
-// being just being happy rather then money.
-
-// a lowMoney multi worker might cost you more, but you don't have to worry about there mood
-//  effecting thire work perfromance as much
-
-// both happyDude, and greedyDude are getting payed the same amount.
-var happyDude = new Worker(10, 5, 1),
-greedyDude = new Worker(10, 1, 4.2);
-
-// at fully happyness happy dude preforms better
-console.log('(happy=1) (pay=10):');
-console.log( 'happy dude effort: ' + happyDude.effort );  
-console.log( 'greedy dude effort: ' + greedyDude.effort );
-console.log('');
-
-happyDude.happy = 0.1;
-greedyDude.happy = 0.1;
-happyDude.setEffort();
-greedyDude.setEffort();
-
-console.log('(happy = 0.1) :');
-console.log( 'happy dude effort: ' + happyDude.effort );  
-console.log( 'greedy dude effort: ' + greedyDude.effort );
-console.log('');
-
-happyDude.happy = 1;
-greedyDude.happy = 1;
-happyDude.rate = 5;
-greedyDude.rate = 10;
-happyDude.setEffort();
-greedyDude.setEffort();
-
-
-console.log('(happy = 1) ( pay = 5 (hd), 10(gd) ):');
-console.log( 'happy dude effort: ' + happyDude.effort );  
-console.log( 'greedy dude effort: ' + greedyDude.effort );
-
 
     </script>
 
