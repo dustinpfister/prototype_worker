@@ -9,9 +9,16 @@ var area = (function () {
         this.id = id;
         this.livingWage = 10;
         this.stack = new Stack({w:16,h:12,d:1,val:{}});
-        this.workers = [];
-        this.startWorkers = 2;
-        this.maxWorkers = 5;
+        //this.workers = [];
+        //this.startWorkers = 2;
+        //this.maxWorkers = 5;
+        this.workers = {
+
+            current : [], // current total of workers
+            startCount : 2,
+            maxCount : 5
+
+        }
 
     },
 
@@ -26,9 +33,10 @@ var area = (function () {
                 newArea = new Area(i);
 
                 w = 0;
-                while(w < newArea.startWorkers){
+                newArea.workers.current = [];
+                while(w < newArea.workers.startCount){
 
-                    newArea.workers.push(new Worker(newArea, 5,1,1));
+                    newArea.workers.current.push(new Worker(newArea, 5,1,1));
 
                     w += 1;
 
