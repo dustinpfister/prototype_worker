@@ -1,14 +1,27 @@
 var render = (function () {
 
     var canvas,
-    ctx;
+    ctx,
 
-    var api = {
+    states = {
+
+        start : function () {},
+
+        run : function () {
+
+            ctx.fillStyle = '#ffff00';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+        }
+
+    },
+
+    api = {
 
         inject : function (id) {
 
             canvas = document.createElement('canvas')
-                ctx = canvas.getContext('2d');
+            ctx = canvas.getContext('2d');
 
             canvas.width = 640;
             canvas.height = 480;
@@ -20,7 +33,11 @@ var render = (function () {
 
         },
 
-        draw : function (state) {}
+        draw : function (state) {
+
+            states[state]();
+
+        }
 
     };
 
