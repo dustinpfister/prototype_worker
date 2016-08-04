@@ -8,6 +8,7 @@ var machine = (function () {
 
         start : function () {
 
+            render.inject('gamearea');
             current = 'run';
 
         },
