@@ -40,18 +40,25 @@ var area = (function () {
 
             // push Areas to the areas array
             var i = 0,
+            b,
             w,
             newArea,
-            options, buildIndex;
+            options,
+            buildIndex;
             while (i < areaCount) {
 
                 newArea = new Area(i);
                 options = newArea.stack.buildOptions();
-                buildIndex = options.splice( Math.floor( Math.random() * options.length ) , 1 );
 
-                console.log(options);
+                b = 0;
+                while (b < newArea.houseCount) {
 
-                newArea.stack.points[buildIndex].val.building = new Building(0,'house')
+                    buildIndex = options.splice(Math.floor(Math.random() * options.length), 1);
+                    newArea.stack.points[buildIndex].val.building = new Building(0, 'house')
+
+                    b += 1;
+
+                }
 
                 //newArea.stack.points[0].val.house=true;
 
