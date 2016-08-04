@@ -8,10 +8,8 @@ var area = (function () {
 
         this.id = id;
         this.livingWage = 10;
+        this.minWage = 5;
         this.stack = new Stack({w:16,h:12,d:1,val:{}});
-        //this.workers = [];
-        //this.startWorkers = 2;
-        //this.maxWorkers = 5;
         this.workers = {
 
             current : [], // current total of workers
