@@ -157,8 +157,41 @@ var area = (function () {
 
     };
 
-    // place a person in the given buiilding
-    proto.placePerson = function () {};
+    // remove the given person from all buildings
+    proto.removePerson = function (perId) {
+
+        var build,
+        i;
+
+        this.stack.points.forEach(function (point) {
+
+            build = point.val.building;
+
+            if (build) {
+
+                i = build.people.length;
+                while (i--) {
+
+                    if (build.people[i].id === perId) {
+
+                        build.people.splice(i, 1);
+
+                    }
+
+                }
+
+            }
+
+        });
+
+    }
+
+    // move a person into the given buiilding
+    proto.movePerson = function (perId, buildId) {
+
+        var build = this.getBuildingById(buildId);
+
+    };
 
     api.createWorld();
 
