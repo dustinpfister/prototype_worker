@@ -10,7 +10,7 @@ var area = (function () {
         this.id = id;
         this.livingWage = 10;
         this.minWage = 5;
-        this.houseCount = 10;
+        this.houseCount = 2;
         this.shopCount = 1;
         this.stack = new Stack({
                 w : 16,
@@ -54,8 +54,20 @@ var area = (function () {
                 while (b < newArea.houseCount) {
 
                     buildIndex = options.splice(Math.floor(Math.random() * options.length), 1);
-                    newArea.stack.points[buildIndex].val.building = new Building(0, 'house')
+                    newArea.stack.points[buildIndex].val.building = new Building('a:'+i+'h:'+b, 'house')
 
+                    b += 1;
+
+                }
+
+                b = 0;
+                while (b < newArea.shopCount) {
+
+                    buildIndex = options.splice(Math.floor(Math.random() * options.length), 1);
+                    newArea.stack.points[buildIndex].val.building = new Building('a:'+i+'s:'+b, 'shop')
+
+					console.log('well??');
+					
                     b += 1;
 
                 }
