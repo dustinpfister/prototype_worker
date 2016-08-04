@@ -1,6 +1,7 @@
 var area = (function () {
 
     var areaCount = 1,
+    current = 0,
 
     areas = [],
 
@@ -45,6 +46,13 @@ var area = (function () {
                 i += 1;
 
             }
+
+        },
+
+        // get the stack of the current area
+        getStack : function(){
+
+            return areas[current];
 
         }
 
