@@ -25,9 +25,10 @@ var area = (function () {
 
     },
 
-    House = function (id) {
+    Building = function (id, type) {
 
         this.id = id;
+        this.type = type;
 
     },
 
