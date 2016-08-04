@@ -28,7 +28,7 @@ var area = (function () {
                 w = 0;
                 while(w < newArea.startWorkers){
 
-                    newArea.workers.push(new Worker(5,1,1));
+                    newArea.workers.push(new Worker(newArea, 5,1,1));
 
                     w += 1;
 

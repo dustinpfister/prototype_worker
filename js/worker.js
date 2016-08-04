@@ -7,7 +7,7 @@ var Worker = (function(){
 
     }
 
-    Worker = function(rate, happyMulti, greedMulti){
+    Worker = function(area, rate, happyMulti, greedMulti){
 
         this.rate = rate;
         this.happy = 1;
