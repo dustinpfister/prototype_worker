@@ -8,7 +8,9 @@ var area = (function () {
     Area = function (id) {
 
         this.id = id;
-        this.stack = new Stack(16, 12, {});
+        this.livingWage = 10;
+        this.stack = new Stack({w:16,h:12,d:1,val:{}});
+        this.workers = [];
 
     },
 
@@ -16,10 +18,15 @@ var area = (function () {
 
         createWorld : function () {
 
-            var i = 0;
+            // push Areas to the areas array
+            var i = 0, newArea;
             while (i < areaCount) {
 
-                areas.push(new Area(i));
+                newArea = new Area(i);
+
+                newArea.workers.push(new Worker(5,1,1));
+
+                areas.push(newArea);
 
                 i += 1;
 
@@ -30,6 +37,8 @@ var area = (function () {
     };
 
     api.createWorld();
+
+    console.log(areas);
 
     return api;
 

@@ -29,8 +29,6 @@ var Worker = (function(){
         var byPayRate = this.rate / area.livingWage * (this.greedMulti / this.happyMulti),
         byHappy = this.happy * this.happyMulti;
 
-        console.log(byPayRate);
-
         this.effort = byPayRate + byHappy;
 
     };
