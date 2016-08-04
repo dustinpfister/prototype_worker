@@ -50,30 +50,29 @@ var area = (function () {
                 newArea = new Area(i);
                 options = newArea.stack.buildOptions();
 
+                // houses
                 b = 0;
                 while (b < newArea.houseCount) {
 
                     buildIndex = options.splice(Math.floor(Math.random() * options.length), 1);
-                    newArea.stack.points[buildIndex].val.building = new Building('a:'+i+'h:'+b, 'house')
+                    newArea.stack.points[buildIndex].val.building = new Building('a:' + i + 'h:' + b, 'house')
 
-                    b += 1;
+                        b += 1;
 
                 }
 
+                // shops
                 b = 0;
                 while (b < newArea.shopCount) {
 
                     buildIndex = options.splice(Math.floor(Math.random() * options.length), 1);
-                    newArea.stack.points[buildIndex].val.building = new Building('a:'+i+'s:'+b, 'shop')
+                    newArea.stack.points[buildIndex].val.building = new Building('a:' + i + 's:' + b, 'shop')
 
-					console.log('well??');
-					
-                    b += 1;
+                        b += 1;
 
                 }
 
-                //newArea.stack.points[0].val.house=true;
-
+                // workers
                 w = 0;
                 newArea.workers.current = [];
                 while (w < newArea.workers.startCount) {
@@ -99,7 +98,28 @@ var area = (function () {
 
         }
 
-    };
+    },
+
+    proto = Area.prototype;
+
+    // get all Area buildings of the given type
+    proto.getBuildings = function (type) {
+
+        buildings = [];
+
+        this.stack.points.forEach(function (point) {
+
+            if (point.val.building) {
+
+                buildings.push(point.val.building);
+
+            }
+
+        });
+
+        return buildings;
+
+    }
 
     api.createWorld();
 
