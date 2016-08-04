@@ -10,7 +10,7 @@ var area = (function () {
         this.id = id;
         this.livingWage = 10;
         this.minWage = 5;
-        this.stack = new Stack({w:16,h:12,d:1,val:{}});
+        this.stack = new Stack({w:16,h:12,d:1});
         this.workers = {
 
             current : [], // current total of workers
@@ -30,6 +30,8 @@ var area = (function () {
             while (i < areaCount) {
 
                 newArea = new Area(i);
+
+                newArea.stack.points[0].val.house=true;
 
                 w = 0;
                 newArea.workers.current = [];

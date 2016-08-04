@@ -21,7 +21,6 @@ var Stack = function (options) {
     options.w = options.w === undefined ? 2 : options.w;
     options.h = options.h === undefined ? 2 : options.h;
     options.d = options.d === undefined ? 2 : options.d;
-    options.val = options.val === undefined ? 0 : options.val;
 
     // set options
     this.w = options.w;
@@ -50,9 +49,6 @@ proto.clearGrid = function (val) {
 
     this.points = [];
 
-    if (val === undefined) {
-        val = 0;
-    }
     while (i < len) {
 
         this.points[i] = {
@@ -61,7 +57,7 @@ proto.clearGrid = function (val) {
             x : i % this.w,
             y : Math.floor((i - (Math.floor(i / (this.w * this.h)) * (this.w * this.h))) / this.w),
             z : Math.floor(i / (this.w * this.h)),
-            val : val
+            val : {}
 
         };
 

@@ -19,7 +19,7 @@ var machine = (function () {
 
     loop = function () {
 
-        requestAnimationFrame(loop);
+        //requestAnimationFrame(loop);
 
         states[current]();
         render.draw(current);
