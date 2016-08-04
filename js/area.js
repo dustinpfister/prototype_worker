@@ -10,6 +10,8 @@ var area = (function () {
         this.id = id;
         this.livingWage = 10;
         this.minWage = 5;
+        this.houseCount = 10;
+        this.shopCount = 1;
         this.stack = new Stack({
                 w : 16,
                 h : 12,
