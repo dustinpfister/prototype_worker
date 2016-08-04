@@ -11,7 +11,8 @@ var render = (function () {
 
         area : function () {
 
-            var stack,color;
+            var stack,
+            color;
 
             ctx.fillStyle = '#ffff00';
             ctx.fillRect(0, 0, canvas.width, canvas.height);
@@ -42,6 +43,13 @@ var render = (function () {
                 }
 
             });
+
+        },
+
+        shop : function () {
+
+            ctx.fillStyle = '#0000ff';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
 
         }
 

@@ -13,7 +13,11 @@ var machine = (function () {
 
         },
 
-        area : function () {}
+        area : function () {},
+
+        shop : function(){
+
+        }
 
     },
 
