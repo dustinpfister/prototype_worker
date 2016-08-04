@@ -191,6 +191,12 @@ var area = (function () {
 
         var build = this.getBuildingById(buildId);
 
+        // remove the person from any buildings
+        this.removePerson(perId);
+
+        // place the person in the given building
+        build.people.push(perId);
+
     };
 
     api.createWorld();
