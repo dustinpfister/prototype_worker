@@ -22,10 +22,22 @@ var render = (function () {
 
             stack.points.forEach(function (point) {
 
-                if (point.val.house) {
+                if (point.val.building) {
+
+                    switch (point.val.building.type) {
+
+                    case 'house':
+                        color = '#ff0000';
+                        break;
+                    case 'shop':
+                        color = '#0000ff';
+                        break;
+                    default:
+                        color = '#000000';
+                    }
 
                     ctx.fillStyle = '#ff0000';
-                    ctx.fillRect(point.x * cellWidth, point.y * cellHeight,cellWidth,cellHeight);
+                    ctx.fillRect(point.x * cellWidth, point.y * cellHeight, cellWidth, cellHeight);
 
                 }
 
