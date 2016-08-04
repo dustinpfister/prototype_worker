@@ -9,18 +9,24 @@ var Worker = (function(){
 
     Worker = function(area, rate, happyMulti, greedMulti){
 
-	    console.log('worker:');
-		console.log(area.getBuildings('shop'));
-	
         this.rate = area.minWage;
         this.happy = 1;
 
         // profile
-        this.happyMulti = 1 + Number(  (Math.random() * 2).toFixed(2) );    // how important being happy is to them
-        this.greedMulti = 1 + Number(  (Math.random() * 2).toFixed(2) );    // how important money is to them.
+        // how important being happy is to them
+        this.happyMulti = 1 + Number(  (Math.random() * 2).toFixed(2) );
+
+        // how important money is to them.
+        this.greedMulti = 1 + Number(  (Math.random() * 2).toFixed(2) );
 
         this.effort = 0;
         this.setEffort();
+
+        // where do they live?
+        var options = area.getBuildings('house');
+
+        // place in random house
+        this.home = options[ Math.floor( Math.random() * options.length )].id;
 
     },
 
