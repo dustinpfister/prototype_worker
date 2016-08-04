@@ -70,6 +70,13 @@ var render = (function () {
 
             document.getElementById(id).appendChild(canvas);
 
+            // attach events
+            if (control) {
+
+                control.attachToCanvas(canvas);
+
+            }
+
         },
 
         draw : function (state) {
