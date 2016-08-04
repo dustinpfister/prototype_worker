@@ -9,7 +9,7 @@ var render = (function () {
 
         start : function () {},
 
-        run : function () {
+        area : function () {
 
             var stack,color;
 

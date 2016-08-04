@@ -9,11 +9,11 @@ var machine = (function () {
         start : function () {
 
             render.inject('gamearea');
-            current = 'run';
+            current = 'area';
 
         },
 
-        run : function () {}
+        area : function () {}
 
     },
 
