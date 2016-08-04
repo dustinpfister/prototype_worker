@@ -9,6 +9,8 @@ var Worker = (function(){
 
     Worker = function(area, rate, happyMulti, greedMulti){
 
+        this.id = 'i'+area.workers.current.length+';ts:'+new Date().getTime()+';';
+
         this.rate = area.minWage;
         this.happy = 1;
 
