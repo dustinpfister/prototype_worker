@@ -48,7 +48,6 @@ proto.clearGrid = function (val) {
     len = this.w * this.h * this.d;
 
     this.points = [];
-
     while (i < len) {
 
         this.points[i] = {
@@ -112,3 +111,21 @@ proto.getPoint = function (ix, y, z) {
     }
 
 };
+
+proto.buildOptions = function () {
+
+    var i = this.points.length,
+    options = [];
+    while (i--) {
+
+        if (this.points[i].building === undefined) {
+
+            options.push(i);
+
+        }
+
+    }
+
+    return options;
+
+}

@@ -10,7 +10,11 @@ var area = (function () {
         this.id = id;
         this.livingWage = 10;
         this.minWage = 5;
-        this.stack = new Stack({w:16,h:12,d:1});
+        this.stack = new Stack({
+                w : 16,
+                h : 12,
+                d : 1
+            });
         this.workers = {
 
             current : [], // current total of workers
@@ -21,23 +25,38 @@ var area = (function () {
 
     },
 
+    House = function (id) {
+
+        this.id = id;
+
+    },
+
     api = {
 
         createWorld : function () {
 
             // push Areas to the areas array
-            var i = 0, w, newArea;
+            var i = 0,
+            w,
+            newArea,
+            options;
             while (i < areaCount) {
 
                 newArea = new Area(i);
 
-                newArea.stack.points[0].val.house=true;
+                options = newArea.stack.buildOptions();
+
+                console.log(options.splice(1, 1));
+
+                console.log(options);
+
+                //newArea.stack.points[0].val.house=true;
 
                 w = 0;
                 newArea.workers.current = [];
-                while(w < newArea.workers.startCount){
+                while (w < newArea.workers.startCount) {
 
-                    newArea.workers.current.push(new Worker(newArea, 5,1,1));
+                    newArea.workers.current.push(new Worker(newArea, 5, 1, 1));
 
                     w += 1;
 
@@ -52,7 +71,7 @@ var area = (function () {
         },
 
         // get the stack of the current area
-        getStack : function(){
+        getStack : function () {
 
             return areas[current].stack;
 
