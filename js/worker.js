@@ -10,7 +10,7 @@ var Worker = (function(){
     Worker = function(area, rate, happyMulti, greedMulti){
 
 	    console.log('worker:');
-		console.log(area.getBuildings());
+		console.log(area.getBuildings('shop'));
 	
         this.rate = area.minWage;
         this.happy = 1;

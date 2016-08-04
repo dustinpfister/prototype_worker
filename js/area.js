@@ -106,12 +106,25 @@ var area = (function () {
     proto.getBuildings = function (type) {
 
         buildings = [];
+        type = type === undefined ? 'all' : type;
 
         this.stack.points.forEach(function (point) {
 
             if (point.val.building) {
 
-                buildings.push(point.val.building);
+                if (type === 'all') {
+
+                    buildings.push(point.val.building);
+
+                } else {
+
+                    if (type === point.val.building.type) {
+
+                        buildings.push(point.val.building);
+
+                    }
+
+                }
 
             }
 
