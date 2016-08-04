@@ -2,6 +2,8 @@ var render = (function () {
 
     var canvas,
     ctx,
+    w = 640,
+    h = 480,
 
     states = {
 
@@ -9,8 +11,25 @@ var render = (function () {
 
         run : function () {
 
+            var stack;
+
             ctx.fillStyle = '#ffff00';
             ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            stack = area.getStack();
+            cellWidth = w / stack.w;
+            cellHeight = h / stack.h;
+
+            stack.points.forEach(function (point) {
+
+                if (point.val.house) {
+
+                    ctx.fillStyle = '#ff0000';
+                    ctx.fillRect(point.x * cellWidth, point.y * cellHeight,cellWidth,cellHeight);
+
+                }
+
+            });
 
         }
 
@@ -21,10 +40,10 @@ var render = (function () {
         inject : function (id) {
 
             canvas = document.createElement('canvas')
-            ctx = canvas.getContext('2d');
+                ctx = canvas.getContext('2d');
 
-            canvas.width = 640;
-            canvas.height = 480;
+            canvas.width = w;
+            canvas.height = h;
 
             ctx.fillStyle = '#00ffff';
             ctx.fillRect(0, 0, canvas.width, canvas.height)

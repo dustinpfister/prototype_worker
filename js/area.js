@@ -52,7 +52,7 @@ var area = (function () {
         // get the stack of the current area
         getStack : function(){
 
-            return areas[current];
+            return areas[current].stack;
 
         }
 
