@@ -11,7 +11,7 @@ var render = (function () {
 
         run : function () {
 
-            var stack;
+            var stack,color;
 
             ctx.fillStyle = '#ffff00';
             ctx.fillRect(0, 0, canvas.width, canvas.height);
@@ -36,7 +36,7 @@ var render = (function () {
                         color = '#000000';
                     }
 
-                    ctx.fillStyle = '#ff0000';
+                    ctx.fillStyle = color;
                     ctx.fillRect(point.x * cellWidth, point.y * cellHeight, cellWidth, cellHeight);
 
                 }
