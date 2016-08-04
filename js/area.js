@@ -31,6 +31,7 @@ var area = (function () {
 
         this.id = id;
         this.type = type;
+        this.people = []; // an array of people that are in the building
 
     },
 
@@ -132,7 +133,32 @@ var area = (function () {
 
         return buildings;
 
-    }
+    };
+
+    // get a single building by it's id
+    proto.getBuildingById = function (id) {
+
+        var i = this.stack.points.length;
+        while (i--) {
+
+            if (this.stack.points[i].val.building) {
+
+                if (this.stack.points[i].val.building.id === id) {
+
+                    return this.stack.points[i].val.building;
+
+                }
+
+            }
+
+        }
+
+        return {};
+
+    };
+
+    // place a person in the given buiilding
+    proto.placePerson = function () {};
 
     api.createWorld();
 

@@ -27,6 +27,8 @@ var Worker = (function(){
 
         // place in random house
         this.home = options[ Math.floor( Math.random() * options.length )].id;
+		
+		console.log(area.getBuildingById(this.home));
 
     },
 
