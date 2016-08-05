@@ -23,7 +23,7 @@ var control = (function () {
         x = Math.floor(x - box.left);
         y = Math.floor(y - box.top);
 
-        states[machine.getState()](e,x,y,box);
+        states[machine.getState()](e, x, y, box);
 
         done(e, x, y, box);
 
@@ -32,13 +32,17 @@ var control = (function () {
     states = {
 
         start : function () {},
-        area : function (e,x,y,box) {
+        area : function (e, x, y, box) {
 
-		    var stack = area.getStack(),
-			canvas = render.canvas;
-		
-		    console.log(render);
-		
+            var stack = area.getStack(),
+            canvas = render.canvas,
+            cellWidth = canvas.width / stack.w,
+            cellHeight = canvas.height / stack.h,
+            cellX = Math.floor(x / cellWidth),
+            cellY = Math.floor(y / cellHeight);
+
+            console.log(stack.getPoint(cellX,cellY, 0));
+
             console.log('area');
 
         },
