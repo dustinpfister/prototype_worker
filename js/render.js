@@ -7,8 +7,6 @@ var render = (function () {
 
     states = {
 
-        canvas : canvas,
-
         start : function () {},
 
         area : function () {
@@ -59,10 +57,14 @@ var render = (function () {
 
     api = {
 
+        canvas : canvas,
+
         inject : function (id) {
 
             canvas = document.createElement('canvas')
                 ctx = canvas.getContext('2d');
+
+            this.canvas = canvas;
 
             canvas.width = w;
             canvas.height = h;
