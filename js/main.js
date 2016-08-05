@@ -6,18 +6,22 @@ var machine = (function () {
 
     states = {
 
-        start : function () {
+        start : {
+			
+			tick: function () {
 
             render.inject('gamearea');
             current = 'area';
 
+			}
+			
         },
 
-        area : function () {},
+        area : {tick:function () {}},
 
-        shop : function(){
+        shop : {tick:function(){
 
-        }
+        }}
 
     },
 
@@ -25,7 +29,7 @@ var machine = (function () {
 
         requestAnimationFrame(loop);
 
-        states[current]();
+        states[current].tick();
         render.draw(current);
 
     };
