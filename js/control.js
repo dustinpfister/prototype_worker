@@ -23,7 +23,25 @@ var control = (function () {
         x = Math.floor(x - box.left);
         y = Math.floor(y - box.top);
 
+        states[machine.getState()]();
+
         done(e, x, y, box);
+
+    },
+
+    states = {
+
+        start : function () {},
+        area : function () {
+
+            console.log('area');
+
+        },
+        shop : function () {
+
+            console.log('shop');
+
+        }
 
     };
 
@@ -34,11 +52,7 @@ var control = (function () {
 
             canvas.addEventListener('mousedown', function (e) {
 
-                userMain(e, function (e, x, y, box) {
-
-                    console.log(y);
-
-                });
+                userMain(e, function (e, x, y, box) {});
 
             });
 
