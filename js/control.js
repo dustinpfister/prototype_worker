@@ -39,11 +39,25 @@ var control = (function () {
             cellWidth = canvas.width / stack.w,
             cellHeight = canvas.height / stack.h,
             cellX = Math.floor(x / cellWidth),
-            cellY = Math.floor(y / cellHeight);
+            cellY = Math.floor(y / cellHeight),
+            point = stack.getPoint(cellX, cellY, 0);
 
-            console.log(stack.getPoint(cellX,cellY, 0));
+            if (point.val.building) {
 
-            console.log('area');
+                switch (point.val.building.type) {
+
+                case 'shop':
+
+				    console.log('shop');
+				
+                    machine.setState('shop');
+
+                    break;
+
+                }
+
+            }
+
 
         },
         shop : function () {
