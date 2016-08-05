@@ -7,21 +7,27 @@ var machine = (function () {
     states = {
 
         start : {
-			
-			tick: function () {
+            params : {},
+            tick : function () {
 
-            render.inject('gamearea');
-            current = 'area';
+                render.inject('gamearea');
+                current = 'area';
 
-			}
-			
+            }
+
         },
 
-        area : {tick:function () {}},
+        area : {
+            params : {},
+            tick : function () {}
 
-        shop : {tick:function(){
+        },
 
-        }}
+        shop : {
+            params : {},
+            tick : function () {}
+
+        }
 
     },
 
@@ -39,9 +45,10 @@ var machine = (function () {
 
     return {
 
-        setState : function (state) {
+        setState : function (newState, params) {
 
-            current = state;
+            current = newState;
+            states[newState].params = params;
 
         },
 
