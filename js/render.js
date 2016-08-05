@@ -7,6 +7,8 @@ var render = (function () {
 
     states = {
 
+        canvas : canvas,
+
         start : function () {},
 
         area : function () {
