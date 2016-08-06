@@ -48,8 +48,8 @@ var control = (function () {
 
                 case 'shop':
 
-				    console.log('shop');
-				
+                    console.log('shop');
+
                     machine.setState('shop');
 
                     break;
@@ -63,6 +63,8 @@ var control = (function () {
         shop : function () {
 
             console.log('shop');
+
+            machine.setState('area');
 
         }
 
