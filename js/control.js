@@ -50,14 +50,17 @@ var control = (function () {
 
                     console.log('shop');
 
-                    machine.setState('shop');
+                    machine.setState('shop', {
+
+                        point : point
+
+                    });
 
                     break;
 
                 }
 
             }
-
 
         },
         shop : function () {

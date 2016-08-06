@@ -52,6 +52,14 @@ var machine = (function () {
 
         },
 
+        getParams : function (state) {
+
+            state = state === undefined ? current : state;
+
+            return states[state].params;
+
+        },
+
         getState : function () {
 
             return current;

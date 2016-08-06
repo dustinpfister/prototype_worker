@@ -50,6 +50,9 @@ var render = (function () {
 
             ctx.fillStyle = '#0000ff';
             ctx.fillRect(0, 0, canvas.width, canvas.height);
+			
+			ctx.fillStyle = '#000000';
+			ctx.fillText(machine.getParams().point.val.building.id, 50,50);
 
         }
 
